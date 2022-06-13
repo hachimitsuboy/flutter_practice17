@@ -1,0 +1,30 @@
+import 'package:test/test.dart';
+import 'package:unit_test_practice/models/favorites.dart';
+
+
+void main() {
+  group('Testing App Provider', () {
+    var favorites = Favorites();
+
+    test('A new item should be added', () {
+      var number = 35;
+      favorites.add(number);
+      expect(favorites.items.contains(number), true);
+    });
+
+    test('An item should be removed', () {
+      var number = 45;
+      favorites.add(number);
+      expect(favorites.items.contains(number), true);
+      favorites.remove(number);
+      expect(favorites.items.contains(number), false);
+    });
+
+    test('Over 100', (){
+      var number = 101;
+      favorites.add(number);
+      expect(favorites.items.contains(number), true);
+    });
+
+  });
+}

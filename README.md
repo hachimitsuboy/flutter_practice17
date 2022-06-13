@@ -1,16 +1,30 @@
 # unit_test_practice
 
-A new Flutter project.
+Flutterのテストに関する練習アプリ（公式リファレンス参照） 
+今回は公式リファレンスの例に加えて、100以上の数値をfavoritesに加えるテストを実行した（特に意味はない）
 
-## Getting Started
+## Unitテスト実行前にやること
 
-This project is a starting point for a Flutter application.
+あらかじめtestパッケージをインストールする
+テストを実行するとき、エミュレーターは停止される
 
-A few resources to get you started if this is your first Flutter project:
+## Unitテストにおける重要単語の説明
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### test
+言葉の通り、一つのテストを表します。
+この中に、この処理をしたらこの値になってほしいという意味を持つexpect関数を0個以上記述する
+
+### except
+
+第一引数と第二引数が一致していたら成功で、不一致だと失敗でエラーになる
+
+第二引数に期待値を指定する。第二引数に値を直接値を指定した場合、equals関数でラップされる
+equals感すはmatherパッケージに属する関数であり、他にもさまざまな便利な関数や定数が用意されている
+
+matcherパッケージは第一引数が期待値（第二引数）に会っているかどうか、マッチしているかどうかをチェックするためのパッケージ
+
+### group
+
+group関数を使用することで、2つ以上のテストをまとめることができる
+メリットとしては、実行結果を見やすくすることができるらしい。今回のプロジェクトではテストの数が、テスト数が増えれば増えるほどありがたみがわかるらしい。
